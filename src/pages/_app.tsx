@@ -65,26 +65,6 @@ const openSans = Open_Sans({
   variable: "--font-open-sans",
 })
 
-const BebasKai = localFont({
-  src: [
-    {
-      path: '../assets/fonts/BebasNeue-Regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../assets/fonts/BebasNeue-Regular.ttf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../assets/fonts/BebasNeue-Regular.ttf',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: "--font-bebaskai"
-})
 const clientSideEmotionCacheMui = createEmotionCacheMui()
 const clientSideEmotionCacheApp = createEmotionCacheApp()
 
@@ -183,14 +163,13 @@ const MyApp: React.FunctionComponent<MyAppProps> = props => {
       <style jsx global>{`
         html {
           font-family: ${openSans.style.fontFamily},
-            ${BebasKai.style.fontFamily};
         }
       `}</style>
       <CacheProvider value={emotionCacheMui}>
         <TssCacheProvider value={emotionCacheApp}>
           <ThemeProvider theme={themeWithLocale}>
             <AOSProvider>
-              <main className={`${BebasKai.variable}`}>
+              <main >
                 <RouterLoadingLinearProgress />
                 <CssBaseline />
                 <InitializeMyApp />

@@ -1,0 +1,1 @@
+export const FONT_NOTO_SANS = 'Noto Sans';

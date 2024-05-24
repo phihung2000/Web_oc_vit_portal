@@ -6,9 +6,9 @@ const useStyles = makeStyles({
 })(theme => {
   return {
     root: {
-      height: "100vh",
-      overflow: "hidden",
-      backgroundColor: "#2A2A2A",
+      // height: "100vh",
+      // overflow: "hidden",
+      backgroundColor: "white",
     },
   }
 })

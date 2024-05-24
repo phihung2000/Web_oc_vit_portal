@@ -8,8 +8,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const nextConfig = {
   env: {
-    NEXT_PUBLIC_API_HOST: process.env.NEXT_PUBLIC_API_HOST,
-    NEX_PUBLIC_API_SOCKET_HOST: process.env.NEX_PUBLIC_API_SOCKET_HOST,
+    // NEXT_PUBLIC_API_HOST: process.env.NEXT_PUBLIC_API_HOST,
   },
   i18n,
   reactStrictMode: true,
