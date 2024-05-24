@@ -1,11 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import { Box, Button, Grid } from "@mui/material"
 import useStyles from "./Home.styles"
-import React from "react"
+import React, { useEffect } from "react"
 import { observer } from "mobx-react"
 import HeaderMobile from "../components/HeaderMobile"
 import Product from "../components/Product"
 import Category from "../components/Category"
+import { gotoPage } from "@/utils/helpers/common"
+import Cookies from 'js-cookie';
 
 type MenuLeftType = {
   childrenChild?: React.ReactNode
@@ -16,6 +18,12 @@ const Home = (props: MenuLeftType) => {
   const { classes, cx } = useStyles()
   const [menuIndex, setMenuIndex] = React.useState(0)
   const [openModal, setOpenModal] = React.useState(false)
+  useEffect(() => {
+    const token = Cookies.get('token');
+    if(token === undefined) {
+       gotoPage('/Login');
+    }
+  }, [])
   return (
     <Grid container className={cx(classes.root)}>
       <Grid item xs={12} className={classes.header}>
